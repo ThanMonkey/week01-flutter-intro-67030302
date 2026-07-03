@@ -445,7 +445,7 @@ java -version
 # ถ้าไม่มีจะขึ้น: command not found หรือ java is not recognized
 ```
 
-**ถ้ายังไม่มี ให้ติดตั้ง JDK 17:**
+**ถ้ายังไม่มี ให้ติดตั้ง JDK 17 หรือ version ที่สูงกว่า:**
 
 **Windows:**
 
@@ -453,7 +453,7 @@ java -version
 # วิธีที่ 1: ใช้ winget (Windows Package Manager — มีใน Windows 10/11)
 winget install Microsoft.OpenJDK.17
 
-# ตรวจสอบว่าติดตั้งสำเร็จ (ปิด Terminal แล้วเปิดใหม่ก่อน)
+# ตรวจสอบว่าติดตั้งสำเร็จ (ปิด vs code แล้วเปิดใหม่ก่อน หรือตรวจสอบจาก command prompt ของ windows)
 java -version
 # ควรแสดง: openjdk version "17.x.x"
 ```
