@@ -1827,7 +1827,7 @@ class WeatherCard extends StatelessWidget {
 
 **ความแตกต่างของผลลัพธ์:**
 ```
-(บันทึกสิ่งที่สังเกต)
+แตกต่างกันอย่างสิ้นเชิงในเรื่องของ ความแม่นยำ
 ```
 
 ### 3.5 Screenshot ของ AI Chat App
