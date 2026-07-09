@@ -1551,7 +1551,19 @@ flutter run
 flutter doctor output:
 ┌─────────────────────────────────────────────────────────┐
 │                                                         │
-│  วางผลลัพธ์จาก flutter doctor ที่นี่                    │
+│  Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.44.4, on macOS 26.2 25C56 darwin-arm64, locale th-TH)
+[✓] Android toolchain - develop for Android devices (Android SDK version 36.0.0)
+[!] Xcode - develop for iOS and macOS
+    ✗ Xcode installation is incomplete; a full installation is necessary for iOS and macOS development.
+      Download at: https://developer.apple.com/xcode/
+      Or install Xcode via the App Store.
+      Once installed, run:
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -runFirstLaunch
+[✓] Chrome - develop for the web
+[✓] Connected device (2 available)
+[✓] Network resources
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 
@@ -1562,20 +1574,71 @@ Android SDK Version: 36.0.0
 
 ### 3.2 Screenshot ของ Flutter App
 
-```
 <img width="1197" height="768" alt="image" src="https://github.com/user-attachments/assets/03144b89-3655-4714-87d1-fdd98c0f1c8c" />
 
-```
 
 **Widget Tree ที่วาด:**
 
 ```
-(วาด Widget Tree ของแอปที่สร้างด้วยมือ)
-
 MaterialApp
-└── ?
-    └── ?
-        └── ...
+      └── ProfilePage
+           └── Scaffold
+                ├── AppBar (appBar)
+                │    └── Text ('โปรไฟล์')
+                └── Padding (body)
+                     └── Column
+                          ├── SizedBox (height: 20)
+                          ├── CircleAvatar
+                          │    └── Icon (Icons.person)
+                          ├── SizedBox (height: 16)
+                          ├── Text ('ธีธัช รัตนโสภา')
+                          ├── SizedBox (height: 8)
+                          ├── Text ('รหัสนักศึกษา: 67030302')
+                          ├── SizedBox (height: 24)
+                          └── Card
+                               └── Padding
+                                    └── Column
+                                         ├── Padding (_buildInfoRow: คณะ)
+                                         │    └── Row
+                                         │         ├── Icon (Icons.school)
+                                         │         ├── SizedBox
+                                         │         ├── Text ('คณะ: ')
+                                         │         └── Expanded
+                                         │              └── Text ('ครุศาสตร์อุตสาหกรรม')
+                                         ├── Divider
+                                         ├── Padding (_buildInfoRow: วิชาที่ชอบ)
+                                         │    └── Row
+                                         │         ├── Icon (Icons.code)
+                                         │         ├── SizedBox
+                                         │         ├── Text ('วิชาที่ชอบ: ')
+                                         │         └── Expanded
+                                         │              └── Text ('Mobile Development')
+                                         ├── Divider
+                                         ├── Padding (_buildInfoRow: เป้าหมาย 1)
+                                         │    └── Row
+                                         │         ├── Icon (Icons.star)
+                                         │         ├── SizedBox
+                                         │         ├── Text ('เป้าหมาย: ')
+                                         │         └── Expanded
+                                         │              └── Text ('พัฒนาแอปให้ได้ 1 ตัว')
+                                         ├── Divider
+                                         ├── Padding (_buildInfoRow: เป้าหมาย 2)
+                                         │    └── Row
+                                         │         ├── Icon (Icons.star)
+                                         │         ├── SizedBox
+                                         │         ├── Text ('เป้าหมาย: ')
+                                         │         └── Expanded
+                                         │              └── Text ('พัฒนาแอปให้ได้ 10 ตัว')
+                                         ├── Divider
+                                         ├── Padding (_buildInfoRow: เป้าหมาย 3)
+                                         │    └── Row
+                                         │         ├── Icon (Icons.star)
+                                         │         ├── SizedBox
+                                         │         ├── Text ('เป้าหมาย: ')
+                                         │         └── Expanded
+                                         │              └── Text ('พัฒนาแอปให้ได้ 100 ตัว')
+                                         ├── SizedBox (height: 24)
+                                         └── ElevatedButton.icon
 ```
 
 ### 3.3 การเปรียบเทียบ Hot Reload vs Hot Restart
@@ -1832,9 +1895,8 @@ class WeatherCard extends StatelessWidget {
 
 ### 3.5 Screenshot ของ AI Chat App
 
-```
-[แนบ Screenshot ของ Gemini AI Chat ที่ทำงานได้]
-```
+<img width="1195" height="755" alt="ภาพถ่ายหน้าจอ 2569-07-09 เวลา 13 56 02" src="https://github.com/user-attachments/assets/a8f7536b-9a73-4703-ace1-8f05774ac8c9" />
+
 
 ---
 
@@ -1845,34 +1907,34 @@ class WeatherCard extends StatelessWidget {
 **1.** Flutter แตกต่างจาก React Native อย่างไรในแง่ของ Rendering Engine?
 
 ```
-คำตอบ: _______________________________________________
+คำตอบ: React Native ทำหน้าที่เป็นระบบส่งคำสั่งให้ OS เป็นผู้วาดหน้าจอ ในขณะที่ Flutter ใช้แนวทางการพกพากราฟิกเอนจินของตนเองไปวาดหน้าจอข้ามระบบปฏิบัติการอย่างอิสระ
 ```
 
 **2.** อธิบายความแตกต่างระหว่าง `StatelessWidget` และ `StatefulWidget` พร้อมยกตัวอย่างการใช้งานที่เหมาะสมของแต่ละประเภท
 
 ```
-คำตอบ: _______________________________________________
+คำตอบ: ถ้านิ่งๆ แค่โชว์ให้ดู ใช้ Stateless แต่ถ้าขยับได้ เปลี่ยนสีได้ ข้อมูลข้างในเปลี่ยนได้ ใช้ Stateful
 ```
 
 **3.** เหตุใดจึงห้าม Commit API Key ลง Git Repository? และมีวิธีจัดการ API Key อย่างปลอดภัยอย่างไรบ้าง?
 
 ```
-คำตอบ: _______________________________________________
+คำตอบ: ห้ามอัปโหลด API Key ลง Git เด็ดขาดเพื่อป้องกันแฮกเกอร์ขโมยไปใช้งาน
 ```
 
 **4.** Hot Reload ทำงานอย่างไร และมีข้อจำกัดอะไรบ้าง?
 
 ```
-คำตอบ: _______________________________________________
+คำตอบ: Hot Reload ทำงานโดยการฉีดโค้ดใหม่เพื่ออัปเดตหน้าจอทันทีโดยยังคงสถานะเดิมของแอปไว้ แต่จะไม่สามารถทำงานได้หากมีการเปลี่ยนแปลงโครงสร้างระดับลึก
 ```
 
 **5.** จากการทดลองใช้ Gemini API ในวันนี้ คุณคิดว่าสามารถนำ AI มาช่วยพัฒนาแอปในแง่ไหนได้บ้าง? ยกตัวอย่าง Use Case 3 อย่าง
 
 ```
 คำตอบ: 
-1. _______________________________________________
-2. _______________________________________________
-3. _______________________________________________
+1. ใช้เป็นผู้ช่วยตอบคำถาม ให้คำแนะนำ หรือแก้ไขปัญหาให้ผู้ใช้ในแอปแบบเรียลไทม์ด้วยภาษาที่จำเป็นและเป็นธรรมชาติ
+2. ใช้ตรวจสอบรูปภาพ สแกนเอกสาร หรือสรุปเนื้อหาจากวิดีโอที่ผู้ใช้อัปโหลดเข้ามาในแอปได้อย่างแม่นยำ
+3. ใช้ขับเคลื่อนระบบแนะนำสินค้า คอนเทนต์ หรือปรับเปลี่ยนหน้าตา UI ให้เข้ากับพฤติกรรมและความชอบของแต่ละบุคคล
 ```
 
 ---
